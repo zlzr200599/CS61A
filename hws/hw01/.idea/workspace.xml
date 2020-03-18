@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="52049fae-efa1-4fa4-bd18-7b370704941f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="4b6071b0-73ef-4fb0-8cfa-b67e51169fec" />
+  </component>
+  <component name="ProjectId" id="1YpS8ZWF7XfsmJHUkAVXPR1fTKY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python tests.Doctest hailstone">
+    <configuration name="Doctest hailstone" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <module name="hw01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw01.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="hailstone" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Doctest if_function" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <module name="hw01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw01.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="if_function" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Doctest largest_factor" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <module name="hw01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw01.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="largest_factor" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Doctest with_if_function" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <module name="hw01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw01.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="with_if_function" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Doctest with_if_statement" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <module name="hw01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw01.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="with_if_statement" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Doctest hailstone" />
+        <item itemvalue="Python tests.Doctest with_if_function" />
+        <item itemvalue="Python tests.Doctest with_if_statement" />
+        <item itemvalue="Python tests.Doctest if_function" />
+        <item itemvalue="Python tests.Doctest largest_factor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52049fae-efa1-4fa4-bd18-7b370704941f" name="Default Changelist" comment="" />
+      <created>1583637883043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583637883043</updated>
+      <workItem from="1583637897558" duration="4234000" />
+      <workItem from="1584499950277" duration="1329000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-23" y="14" width="1089" height="660" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583638480612">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="-23" y="14" width="1089" height="660" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1583638480612" />
+    <state x="411" y="98" key="FileChooserDialogImpl" timestamp="1584500347830">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="411" y="98" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584500347830" />
+    <state x="495" y="234" key="Github.ShareDialog" timestamp="1584500432552">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="495" y="234" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1584500432552" />
+    <state width="1202" height="184" key="GridCell.Tab.0.bottom" timestamp="1583642137826">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583642137826" />
+    <state width="1202" height="184" key="GridCell.Tab.0.center" timestamp="1583642137826">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583642137826" />
+    <state width="1202" height="184" key="GridCell.Tab.0.left" timestamp="1583642137826">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583642137826" />
+    <state width="1202" height="184" key="GridCell.Tab.0.right" timestamp="1583642137826">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583642137826" />
+    <state width="1202" height="184" key="GridCell.Tab.1.bottom" timestamp="1583642137827">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583642137827" />
+    <state width="1202" height="184" key="GridCell.Tab.1.center" timestamp="1583642137827">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1583642137827" />
+    <state width="1202" height="184" key="GridCell.Tab.1.left" timestamp="1583642137826">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1583642137826" />
+    <state width="1202" height="184" key="GridCell.Tab.1.right" timestamp="1583642137827">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="184" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1583642137827" />
+    <state x="118" y="0" key="SettingsEditor" timestamp="1584500619340">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="118" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584500619340" />
+    <state x="314" y="150" key="com.intellij.ide.util.TipDialog" timestamp="1584500107869">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="314" y="150" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584500107869" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/hw01$Doctest_with_if_function.coverage" NAME="Doctest with_if_function Coverage Results" MODIFIED="1583641256997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw01$Doctest_with_if_statement.coverage" NAME="Doctest with_if_statement Coverage Results" MODIFIED="1583641249563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw01$Doctests_in_hw01.coverage" NAME="Doctests in hw01 Coverage Results" MODIFIED="1583638360780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw01$Doctest_a_plus_abs_b.coverage" NAME="Doctest a_plus_abs_b Coverage Results" MODIFIED="1583638947979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw01$Doctest_two_of_three.coverage" NAME="Doctest two_of_three Coverage Results" MODIFIED="1583640565577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw01$Doctest_largest_factor.coverage" NAME="Doctest largest_factor Coverage Results" MODIFIED="1583640798802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw01$Doctest_hailstone.coverage" NAME="Doctest hailstone Coverage Results" MODIFIED="1583641768484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw01$Doctest_if_function.coverage" NAME="Doctest if_function Coverage Results" MODIFIED="1583640843221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
