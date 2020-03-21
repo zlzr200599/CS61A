@@ -131,27 +131,60 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     goal:       The game ends and someone wins when this score is reached.
     say:        The commentary function to call at the end of the first turn.
     feral_hogs: A boolean indicating whether the feral hogs rule should be active.
+
+    >>> always_one = make_test_dice(1)
+    >>> always_two = make_test_dice(2)
+    >>> always_three = make_test_dice(3)
+    >>> always = always_roll
+    >>> # example 1
+    >>> def strat0(s0, s1):
+    ...     if s0 == 0: return 3
+    ...     if s0 == 7: return 5
+    ...     return 8
+    >>> def strat1(s0, s1):
+    ...     if s0 == 0: return 1
+    ...     if s0 == 4: return 2
+    ...     return 6
+    >>> s0, s1 = play(
+    ...   strat0, strat1, score0=0, score1=0, goal=21,
+    ...   dice=make_test_dice(2, 2, 3, 4, 2, 2, 2, 2, 2, 3, 5, 2, 2, 2, 2, 2, 2, 2, 6, 1))
+    >>> s0
+    43
+    >>> s1
+    15
+
+    >>> s0, s1 = play(always(2), always(1), score0=0, score1=0, goal=5, dice=make_test_dice(2, 2))
+    >>> s0
+    7
     """
     who = 0  # Who is about to take a turn, 0 (first) or 1 (second)
     # BEGIN PROBLEM 5
     "*** YOUR CODE HERE ***"
     list_strategies = (strategy0, strategy1)
+    list_one_turn_score = [0, 0]
     list_scores = [score0, score1]
     list_rolls = [0, 0]
+    bonus = 0
     while True:
         current_strategy = list_strategies[who]
         current_player_score = list_scores[who]
         opponent_player_score = list_scores[other(who)]
         list_rolls[who] = current_strategy(current_player_score, opponent_player_score)
-        list_scores[who] += take_turn(num_rolls= list_rolls[who],opponent_score= opponent_player_score, dice= dice)
-        if is_swap(list_scores[who],list_scores[other(who)]):
+        if feral_hogs:
+            if abs(list_rolls[who] - list_one_turn_score[who]) == 2:
+                bonus = 3
+            else:
+                bonus = 0
+        list_one_turn_score[who] = take_turn(num_rolls=list_rolls[who],
+                                             opponent_score=opponent_player_score,
+                                             dice=dice)
+        list_scores[who] += (list_one_turn_score[who] + bonus)
+        if is_swap(list_scores[who], list_scores[other(who)]):
             list_scores = list_scores[::-1]
         if max(list_scores) >= goal:
             score0, score1 = list_scores
             break
         who = other(who)
-
-
     # END PROBLEM 5
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
