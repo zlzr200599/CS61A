@@ -181,6 +181,7 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
         list_scores[who] += (list_one_turn_score[who] + bonus)
         if is_swap(list_scores[who], list_scores[other(who)]):
             list_scores = list_scores[::-1]
+        say = say(list_scores[0],list_scores[1])
         if max(list_scores) >= goal:
             score0, score1 = list_scores
             break
@@ -275,6 +276,15 @@ def announce_highest(who, prev_high=0, prev_score=0):
     assert who == 0 or who == 1, 'The who argument should indicate a player.'
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
+    def say_break_record(score0, score1):
+        who_score = score0 if who == 0 else score1
+        this_gain = who_score - prev_score
+        if this_gain > prev_high:
+            print(this_gain, "point(s)! That's the biggest gain yet for Player", who)
+        this_high = this_gain if this_gain > prev_high else prev_high
+        return announce_highest(who, this_high, who_score)
+    return say_break_record
+
     # END PROBLEM 7
 
 
