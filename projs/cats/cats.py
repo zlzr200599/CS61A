@@ -103,6 +103,18 @@ def autocorrect(user_word, valid_words, diff_function, limit):
     """
     # BEGIN PROBLEM 5
     "*** YOUR CODE HERE ***"
+    if user_word in valid_words:
+        return user_word
+    diff_iter = map(lambda w2:diff_function(user_word, w2, limit), valid_words)
+    corrected_index = 0
+    diff_smallest = limit + 1
+    for n, i in enumerate(diff_iter):
+        if i < diff_smallest:
+            diff_smallest = i
+            corrected_index = n
+    if diff_smallest > limit:
+        return user_word
+    return valid_words[corrected_index]
     # END PROBLEM 5
 
 
@@ -110,32 +122,53 @@ def sphinx_swap(start, goal, limit):
     """A diff function for autocorrect that determines how many letters
     in START need to be substituted to create GOAL, then adds the difference in
     their lengths.
+
+    >>> sphinx_swap("car", "cad", 10)
+    1
     """
     # BEGIN PROBLEM 6
-    assert False, 'Remove this line'
+    if limit < 0:
+        return 0
+    elif len(start) == 0 or len(goal) == 0:
+        return max(len(start), len(goal))
+    elif start[0] == goal[0]:
+        return sphinx_swap(start[1:], goal[1:], limit)
+    else:
+        return 1 + sphinx_swap(start[1:], goal[1:], limit - 1)
     # END PROBLEM 6
 
 
 def feline_fixes(start, goal, limit):
-    """A diff function that computes the edit distance from START to GOAL."""
-    assert False, 'Remove this line'
+    """A diff function that computes the edit distance from START to GOAL.
+    >>> big_limit = 10
+    >>> feline_fixes("cats", "scat", big_limit)       # cats -> scats -> scat
+    2
+    >>> feline_fixes("purng", "purring", big_limit)   # purng -> purrng -> purring
+    2
+    >>> feline_fixes("ckiteus", "kittens", big_limit) # ckiteus -> kiteus -> kitteus -> kittens
+    3
+    """
 
-    if ______________: # Fill in the condition
+    if limit < 0: # Fill in the condition
         # BEGIN
         "*** YOUR CODE HERE ***"
+        return 0
         # END
 
-    elif ___________: # Feel free to remove or add additional cases
+    elif len(start) == 0 or len(goal) == 0: # Feel free to remove or add additional cases
         # BEGIN
         "*** YOUR CODE HERE ***"
+        return max(len(start), len(goal))
         # END
-
+    elif start[0] == goal[0]:
+        return feline_fixes(start[1:], goal[1:], limit)
     else:
-        add_diff = ...  # Fill in these lines
-        remove_diff = ... 
-        substitute_diff = ... 
+        add_diff = 1 + feline_fixes(start, goal[1:], limit - 1)  # Fill in these lines
+        remove_diff = 1 + feline_fixes(start[1:], goal, limit - 1)
+        substitute_diff = 1 + feline_fixes(start[1:], goal[1:], limit - 1)
         # BEGIN
         "*** YOUR CODE HERE ***"
+        return min(add_diff, remove_diff, substitute_diff)
         # END
 
 
