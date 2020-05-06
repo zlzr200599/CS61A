@@ -2,6 +2,7 @@ LAB_SOURCE_FILE = "lab05.py"
 
 """ Lab 05: Trees and Proj2 Prep """
 
+
 def couple(lst1, lst2):
     """Return a list that contains lists with i-th elements of two sequences
     coupled together.
@@ -16,6 +17,7 @@ def couple(lst1, lst2):
     """
     assert len(lst1) == len(lst2)
     "*** YOUR CODE HERE ***"
+    return [[a, b] for a, b in zip(lst1, lst2)]
 
 from math import sqrt
 def distance(city1, city2):
@@ -30,6 +32,9 @@ def distance(city1, city2):
     5.0
     """
     "*** YOUR CODE HERE ***"
+    xx = get_lat(city1) - get_lat(city2)
+    yy = get_lon(city1) - get_lon(city2)
+    return sqrt(xx**2 + yy**2)
 
 def closer_city(lat, lon, city1, city2):
     """
@@ -46,7 +51,13 @@ def closer_city(lat, lon, city1, city2):
     'Bucharest'
     """
     "*** YOUR CODE HERE ***"
-
+    zero_city = make_city("zero_city", lat, lon)
+    dist1 = distance(zero_city, city1)
+    dist2 = distance(zero_city, city2)
+    if dist1 <= dist2:
+        return get_name(city1)
+    else:
+        return get_name(city2)
 def check_abstraction():
     """
     There's nothing for you to do for this function, it's just here for the extra doctest
@@ -145,6 +156,15 @@ def nut_finder(t):
     True
     """
     "*** YOUR CODE HERE ***"
+    if not is_tree(t):
+        return False
+    if label(t) == 'nut':
+        return True
+    for bt in branches(t):
+        if nut_finder(bt):
+            return True
+    return False
+
 
 def sprout_leaves(t, values):
     """Sprout new leaves containing the data in values at each leaf in
@@ -180,6 +200,11 @@ def sprout_leaves(t, values):
           2
     """
     "*** YOUR CODE HERE ***"
+    if is_leaf(t):
+        return tree(label(t), [tree(v) for v in values])
+
+    return tree(label(t), [sprout_leaves(bt, values) for bt in branches(t)])
+
 
 
 # Tree ADT
