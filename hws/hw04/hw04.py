@@ -176,6 +176,13 @@ def replace_leaf(t, old, replacement):
     True
     """
     "*** YOUR CODE HERE ***"
+    if is_leaf(t):
+        if label(t) == old:
+            return tree(replacement, [])
+        else:
+            return tree(label(t), [])
+    return tree(label(t), [replace_leaf(bt, old, replacement) for bt in branches(t)])
+
 
 def make_withdraw(balance, password):
     """Return a password-protected withdraw function.
@@ -206,6 +213,21 @@ def make_withdraw(balance, password):
     True
     """
     "*** YOUR CODE HERE ***"
+    errors_list = []
+    def withdraw(amount, pw):
+        nonlocal balance
+        if len(errors_list) == 3:
+            out_string = "Your account is locked. Attempts: ['{0}', '{1}', '{2}']".format(*errors_list)
+            return out_string
+        if pw != password:
+            errors_list.append(pw)
+            return 'Incorrect password'
+        if amount > balance:
+            return 'Insufficient funds'
+        balance = balance - amount
+        return balance
+    return withdraw
+
 
 def make_joint(withdraw, old_pass, new_pass):
     """Return a password-protected withdraw function that has joint access to
@@ -246,6 +268,18 @@ def make_joint(withdraw, old_pass, new_pass):
     "Your account is locked. Attempts: ['my', 'secret', 'password']"
     """
     "*** YOUR CODE HERE ***"
+    get_withdraw = withdraw(0, old_pass)
+    if type(get_withdraw) == str:
+        if 'Incorrect password' == get_withdraw:
+            return 'Incorrect password'
+        if "Your account is locked." in get_withdraw:
+            return get_withdraw
+    def joint(amount, pw):
+        if pw == new_pass:
+            return withdraw(amount, old_pass)
+        else:
+            return withdraw(amount, pw)
+    return joint
 
 
 
