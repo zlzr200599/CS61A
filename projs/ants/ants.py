@@ -105,7 +105,7 @@ class Ant(Insect):
 
     implemented = False  # Only implemented Ant classes should be instantiated
     food_cost = 0
-
+    blocks_path = True
     # ADD CLASS ATTRIBUTES HERE
 
     def __init__(self, armor=1):
@@ -284,24 +284,34 @@ class HungryAnt(Ant):
     name = 'Hungry'
     food_cost = 4
     # OVERRIDE CLASS ATTRIBUTES HERE
+    time_to_digest = 3
     # BEGIN Problem 6
-    implemented = False  # Change to True to view in the GUI
-
+    implemented = True  # Change to True to view in the GUI
     # END Problem 6
 
     def __init__(self, armor=1):
         # BEGIN Problem 6
         "*** YOUR CODE HERE ***"
+        Ant.__init__(self, armor)
+        self.digesting = 0
         # END Problem 6
 
     def eat_bee(self, bee):
         # BEGIN Problem 6
         "*** YOUR CODE HERE ***"
+        bee.reduce_armor(bee.armor)
+        self.digesting = self.time_to_digest
         # END Problem 6
 
     def action(self, gamestate):
         # BEGIN Problem 6
         "*** YOUR CODE HERE ***"
+        if 0 < self.digesting:
+            self.digesting -= 1
+        else:
+            b = random_or_none(self.place.bees)
+            if b is not None:
+                self.eat_bee(b)
         # END Problem 6
 
 
@@ -312,14 +322,17 @@ class NinjaAnt(Ant):
     damage = 1
     food_cost = 5
     # OVERRIDE CLASS ATTRIBUTES HERE
+    blocks_path = False
     # BEGIN Problem 7
-    implemented = False  # Change to True to view in the GUI
+    implemented = True  # Change to True to view in the GUI
 
     # END Problem 7
 
     def action(self, gamestate):
         # BEGIN Problem 7
         "*** YOUR CODE HERE ***"
+        for b in self.place.bees[:]:
+            b.reduce_armor(self.damage)
         # END Problem 7
 
 
@@ -478,7 +491,9 @@ class Bee(Insect):
         """Return True if this Bee cannot advance to the next Place."""
         # Phase 4: Special handling for NinjaAnt
         # BEGIN Problem 7
-        return self.place.ant is not None
+        if self.place.ant is None or not self.place.ant.blocks_path:
+            return False
+        return True
         # END Problem 7
 
     def action(self, gamestate):
