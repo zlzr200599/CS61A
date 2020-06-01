@@ -107,6 +107,9 @@ class Name(Expr):
         None
         """
         "*** YOUR CODE HERE ***"
+        if self.string not in env:
+            return None
+        return env[self.string]
 
     def __str__(self):
         return self.string
@@ -173,6 +176,9 @@ class CallExpr(Expr):
         Number(14)
         """
         "*** YOUR CODE HERE ***"
+        function = self.operator.eval(env)
+        arguments = [operand.eval(env) for operand in self.operands]
+        return function.apply(arguments)
 
     def __str__(self):
         function = str(self.operator)
