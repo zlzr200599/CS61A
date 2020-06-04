@@ -17,7 +17,14 @@ def prune_min(t):
     Tree(6, [Tree(3, [Tree(1)])])
     """
     "*** YOUR CODE HERE ***"
-
+    if t.branches == []:
+        return
+    prune_min(t.branches[0])
+    prune_min(t.branches[1])
+    if (t.branches[0].label > t.branches[1].label):
+        t.branches.pop(0)
+    else:
+        t.branches.pop(1)
 def remainders_generator(m):
     """
     Yields m generators. The ith yielded generator yields natural numbers whose
@@ -50,6 +57,12 @@ def remainders_generator(m):
     11
     """
     "*** YOUR CODE HERE ***"
+    def gen(i):
+        for e in naturals():
+            if e % m == i:
+                yield e
+    for i in range(m):
+        yield gen(i)
 
 def foldr(link, fn, z):
     """ Right fold
@@ -62,6 +75,9 @@ def foldr(link, fn, z):
     6
     """
     "*** YOUR CODE HERE ***"
+    if link is Link.empty:
+        return z
+    return fn(link.first, foldr(link.rest, fn, z))
 
 def mapl(lst, fn):
     """ Maps FN on LST
@@ -70,7 +86,7 @@ def mapl(lst, fn):
     Link(9, Link(4, Link(1)))
     """
     "*** YOUR CODE HERE ***"
-
+    return foldr(lst, lambda x, xs: Link(fn(x), xs), Link.empty)
 # Account
 class Account(object):
     """A bank account that allows deposits and withdrawals.
@@ -136,10 +152,19 @@ class CheckingAccount(Account):
         return Account.withdraw(self, amount + self.withdraw_fee)
 
     "*** YOUR CODE HERE ***"
-
+    def deposit_check(self, check):
+        if check.payable_to != self.holder or check.deposited:
+            print("The police have been notified.")
+        else:
+            self.deposit(check.amount)
+            check.deposited = True
+            return self.balance
 class Check(object):
     "*** YOUR CODE HERE ***"
-
+    def __init__(self, payable_to, amount):
+        self.payable_to = payable_to
+        self.amount = amount
+        self.deposited = False
 
 def foldl(link, fn, z):
     """ Left fold
@@ -154,7 +179,7 @@ def foldl(link, fn, z):
     if link is Link.empty:
         return z
     "*** YOUR CODE HERE ***"
-    return foldl(______, ______, ______)
+    return foldl(link.rest, fn, fn(z, link.first))
 
 def filterl(lst, pred):
     """ Filters LST based on PRED
@@ -163,6 +188,12 @@ def filterl(lst, pred):
     Link(4, Link(2))
     """
     "*** YOUR CODE HERE ***"
+    def filtered(x, xs):
+        if pred(x):
+            return Link(x, xs)
+        return xs
+
+    return foldr(lst, filtered, Link.empty)
 
 def reverse(lst):
     """ Reverses LST with foldl
@@ -175,6 +206,17 @@ def reverse(lst):
     True
     """
     "*** YOUR CODE HERE ***"
+    return foldl(lst, lambda x, y: Link(y, x), Link.empty)
+
+# Extra for experience
+def reverse2(lst):
+    if lst is Link.empty:
+        return lst
+    elif lst.rest is not Link.empty:
+        second, last = lst.rest, lst
+        lst = reverse2(second)
+        second.rest, last.rest = last, Link.empty
+    return lst
 
 identity = lambda x: x
 
@@ -190,6 +232,7 @@ def foldl2(link, fn, z):
     """
     def step(x, g):
         "*** YOUR CODE HERE ***"
+        return lambda a: g(fn(a, x))
     return foldr(link, step, identity)(z)
 
 def num_splits(s, d):
@@ -206,7 +249,16 @@ def num_splits(s, d):
     12
     """
     "*** YOUR CODE HERE ***"
-
+    def difference_so_far(s, difference):
+        if not s:
+            if abs(difference) <= d:
+                return 1
+            else:
+                return 0
+        element = s[0]
+        s = s[1:]
+        return difference_so_far(s, difference + element) + difference_so_far(s, difference - element)
+    return difference_so_far(s, 0)//2
 # Link Class
 class Link:
     """A linked list.
